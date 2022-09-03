@@ -25,10 +25,10 @@ public class RoleController {
 		return "role";
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	@PostMapping("/saverole")
-	public ModelAndView saveRole(@ModelAttribute("user") User user, @ModelAttribute("role") Role role) {
-		user.setRoles((Role) role);
+	public ModelAndView saveRole(@ModelAttribute("user") User user, @ModelAttribute("role") Set<Role> role) {
+		 user.setRoles(role);
 //		Role rol =roleService.addRole(role);
 		ModelAndView mv = new ModelAndView();
 //		mv.addObject("roleData", rol);

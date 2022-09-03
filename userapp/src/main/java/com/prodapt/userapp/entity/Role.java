@@ -1,5 +1,6 @@
 package com.prodapt.userapp.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -20,7 +21,7 @@ public class Role {
 	private Long roleId;
 	private String roleName;
 	@ManyToMany
-	private Set<User> user;
+	private Set<User> user = new HashSet<>();
 
 	public Role() {
 		super();
